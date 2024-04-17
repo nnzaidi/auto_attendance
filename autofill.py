@@ -25,6 +25,7 @@ print('Today is ',dt)
 
 if dt in data['Tarikh'].values:
 
+    data.loc[data['Tarikh']==dt, wkt] = data['Tarikh'].astype(str)
     data.loc[data['Tarikh']==dt, wkt] = time.strftime("%H:%M", time.localtime())
     print("\nTime recorded.\n")
 else:
